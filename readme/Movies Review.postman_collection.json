@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "60fcd839-5509-4ee5-ab07-9853cc5ec69b",
+		"name": "Movies Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delete movie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "secrets",
+							"value": "athlu",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/movie/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"movie",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "movie_name",
+							"value": "good movie",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "shir@shir.com",
+							"type": "default"
+						},
+						{
+							"key": "movie_name",
+							"value": "good movie",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "fdgd",
+							"type": "default"
+						},
+						{
+							"key": "user_name",
+							"value": "shir",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "shir@shir.com",
+							"type": "default"
+						},
+						{
+							"key": "user_name",
+							"value": "shir",
+							"type": "default"
+						},
+						{
+							"key": "movie_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "star_rank",
+							"value": "5",
+							"type": "default"
+						},
+						{
+							"key": "review_text",
+							"value": "very bad",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"review"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
