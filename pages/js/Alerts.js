@@ -1,5 +1,5 @@
 
-class MyAlert extends React.Component {
+class Alert extends React.Component {
 	constructor(props) {
 	  super(props);
 	}

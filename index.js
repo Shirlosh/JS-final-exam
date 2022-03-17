@@ -8,23 +8,32 @@ const path = require('path');
 
 const app = express()
 let  port = 5001;
-const reExt = /\.([a-z]+)/i;
 
-
-function content_type_from_extension( url)
+function content_type_from_extension(url)
 {
-	const m = url.match( reExt );
-	if ( !m ) return 'application/json'
-	const ext = m[1].toLowerCase();
 
-	switch( ext )
-	{
-		case 'js': return 'text/javascript';
-		case 'css': return 'text/css';
-		case 'html': return 'text/html';
+	const match = url.match( /\.([a-z]+)/i );
+	
+	if ( ! match ) {
+		if ( url === '/' || ( url.startsWith('/') && url.endsWith('/')) ) 
+		{
+			return 'text/html';
+		}
+		return 'application/json';
 	}
 
-	return 'text/plain'
+	const ext = match[1].toLowerCase();
+
+	switch( ext ) {
+		case 'js': 
+			return 'text/javascript';
+		case 'css': 
+			return 'text/css';
+		case 'html': 
+			return 'text/html';
+	}
+
+	return 'text/plain';
 }
 
 const set_content_type = function (req, res, next) 
@@ -45,7 +54,7 @@ app.use(express.urlencoded( // to support URL-encoded bodies
 const router = express.Router();
 
 router.get('/movies', (req, res) => {MoviesHandling.get_movies_list(req, res)})
-router.post('/movie', (req, res) => {MoviesHandling.get_movie(req, res)})
+router.post('/getmovie', (req, res) => {MoviesHandling.get_movie(req, res)})
 router.post('/movie', (req, res) => {MoviesHandling.create_movie(req, res)})
 router.delete('/movie/(:id)', (req, res) => {MoviesHandling.delete_movie(req, res)})
 
@@ -53,9 +62,7 @@ router.get('/reviews', (req, res) => {ReviewsHandling.get_review_list(req, res)}
 router.post('/review', (req, res) => {ReviewsHandling.create_review(req, res)})
 
 
-app.use('/',router)
-
-app.use(express.static(path.join(__dirname, 'pages'))); //added
+app.use(express.static('pages')); //added
 app.use('/api',router) //added
 
 // Init 
