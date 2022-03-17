@@ -1,5 +1,5 @@
 
-class HomePage extends React.Component 
+class App extends React.Component 
 {
 	constructor(props) 
 	{
@@ -26,7 +26,7 @@ class HomePage extends React.Component
 		</main>
 		<aside>
 			<PostMovie />
-                    </aside>
+         </aside>
 
 			</div>
 		</div>)
