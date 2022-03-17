@@ -2,7 +2,6 @@ class Reviews extends React.Component
 {
     constructor(props){
         super(props);
-        this.handle_new_review = this.new_review.bind(this)
 
         this.state = {
             reviews: []
@@ -41,19 +40,10 @@ class Reviews extends React.Component
 	}
 
     render() {
-        const reviews = this.state.reviews
         return <div>
                     <h3>Reviews</h3>
-                    {reviews.map( (post,index) => 
-                    {
-                        return <Review
-                                    handle_delete={this.props.handle_delete}
-                                    review={post}  
-                                    key={index}
-                                />  
-                    })}
-                        <br/>
-                        <PostReview />
+                    {this.state.reviews.map( (review, index) => <Review review={review} key={index} />)}
+                    <PostReview movie_id={this.props.movie_id}/>
                 </div>
          } 
 }
@@ -70,7 +60,7 @@ class Review extends React.Component
 	render() {
         const review = this.props.review
 
-		return 	<div style={{fontSize: '1.5rem'}} className='UserItem'>				
+		return 	<div>		
                     {' '}<span>From {review.creator_id} | Rate {review.star_rank}: <strong>{review.review_text}</strong> </span>
                     
 				</div>

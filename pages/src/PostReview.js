@@ -2,7 +2,7 @@ class PostReview extends React.Component
 {
     constructor(props){
         super(props);
-        this.handle_new_review = this.new_review.bind(this)
+        this.new_review = this.new_review.bind(this)
     }
 
     async new_review(event)
@@ -19,11 +19,8 @@ class PostReview extends React.Component
 			method:'POST',
 			body: JSON.stringify({movie_id:movie_id,star_rank:star_rank,email:email,review_text :review_text}),
 		});
-        if ( response.status == 200 )
-		{
-            this.get_posts();
-		}
-		else 
+        
+        if ( response.status != 200 )
 		{
 		  const err = await response.text();
 		  alert( err );
