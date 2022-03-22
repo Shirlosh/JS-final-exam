@@ -1,6 +1,9 @@
-• Details about submitter:
-    • Full Name: Shirley Alus
-    • ID Number: 207023813
-    • Email address: Shirleyalus@gmail.com
+Commands to run the project:
+npm install
+npm run build
+npm run app
 
-please start from http://localhost:5001/home/index.html
+then in your browser go to : http://localhost:5001/
+
+Comments:
+- This is a single page application.
