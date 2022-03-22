@@ -22,7 +22,7 @@ class Search extends React.Component {
             body: JSON.stringify({ movie_name: name })
         });
 
-        if (response.status != 200) alert(response.message);
+        if (response.status != 200) alert("Movie isnt exist");
 
         const data = await response.json();
         return data;

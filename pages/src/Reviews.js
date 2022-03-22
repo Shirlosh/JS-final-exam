@@ -61,7 +61,7 @@ class Review extends React.Component
         const review = this.props.review
 
 		return 	<div>		
-                    {' '}<span>From {review.creator_id} | Rate {review.star_rank}: <strong>{review.review_text}</strong> </span>
+                    {' '}<span>From id {review.creator_id} | Rate {review.star_rank}: <strong>{review.review_text}</strong> </span>
                     
 				</div>
 	}

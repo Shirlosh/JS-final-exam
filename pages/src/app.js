@@ -26,6 +26,7 @@ class App extends React.Component
 		</main>
 		<aside>
 			<PostMovie />
+			<RecentlyAdded />
          </aside>
 
 			</div>

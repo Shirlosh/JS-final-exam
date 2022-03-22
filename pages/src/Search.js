@@ -24,7 +24,7 @@ class Search extends React.Component {
 		})
 		
 		if(response.status != 200)
-			alert(response.message)
+			alert("Movie isnt exist")
         
         const data = await response.json()
         return data			

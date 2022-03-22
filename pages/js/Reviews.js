@@ -61,7 +61,7 @@ class Review extends React.Component {
             React.createElement(
                 'span',
                 null,
-                'From ',
+                'From id ',
                 review.creator_id,
                 ' | Rate ',
                 review.star_rank,
