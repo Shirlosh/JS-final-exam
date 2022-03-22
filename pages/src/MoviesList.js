@@ -11,7 +11,7 @@ class MoviesList extends React.Component
 
 		return (                  <div> 
                         <Movie movie={this.props.movie}/> <br/>
-                        <Reviews movie_id={this.props.movie.creator_id}/>
+                        <Reviews movie_id={this.props.movie.id}/>
                         </div> );
 	}
 }

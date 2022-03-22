@@ -56,7 +56,7 @@ class MoviesList {
         }        
 
         let e = this.movies_array[index]
-        movie = {name:e.name, creator_id: e.creator_id, image_url: e.image_url}
+        movie = {name:e.name, creator_id: e.creator_id, id:e.id, image_url: e.image_url}
 
         return movie
     }

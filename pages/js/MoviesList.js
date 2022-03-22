@@ -16,7 +16,7 @@ class MoviesList extends React.Component {
             React.createElement(Movie, { movie: this.props.movie }),
             ' ',
             React.createElement('br', null),
-            React.createElement(Reviews, { movie_id: this.props.movie.creator_id })
+            React.createElement(Reviews, { movie_id: this.props.movie.id })
         );
     }
 }
