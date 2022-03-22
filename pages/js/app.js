@@ -34,7 +34,7 @@ class App extends React.Component {
 					"aside",
 					null,
 					React.createElement(PostMovie, null),
-					React.createElement(RandomMovies, null)
+					React.createElement(RecentlyAdded, null)
 				)
 			)
 		);
