@@ -31,7 +31,7 @@ class PostReview extends React.Component {
             React.createElement('br', null),
             React.createElement(
                 'form',
-                { onSubmit: this.new_review },
+                { onSubmit: e => this.new_review(e) },
                 React.createElement(
                     'div',
                     { 'class': 'form-group' },

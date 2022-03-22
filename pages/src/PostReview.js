@@ -30,7 +30,7 @@ class PostReview extends React.Component
     render() {
         return( <div>
                         <br/>
-                        <form onSubmit={this.new_review}>
+                        <form onSubmit={(e)=>this.new_review(e)}>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Add Review:</label><br/>   
                                 <input type="email" className="form-control1" id="SearchInput" placeholder="email"/>

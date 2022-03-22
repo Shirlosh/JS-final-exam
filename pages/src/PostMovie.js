@@ -21,7 +21,7 @@ class PostMovie extends React.Component {
         if ( response.status == 200 )
 		{
             const data = await response.json();
-			alert ("secret" + data.secret)
+			alert ("secret " + data.secrets)
 		}
 		else 
 		{
@@ -33,7 +33,7 @@ class PostMovie extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.add_movie}>
+            <form onSubmit={(e)=>this.add_movie(e)}>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Add Movie:</label><br/>   
                 <input type="email" className="form-control1" id="SearchInput" placeholder="email"/> 

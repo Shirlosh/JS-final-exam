@@ -31,6 +31,12 @@ class Movie extends React.Component {
         return React.createElement(
             'div',
             null,
+            React.createElement(
+                'span',
+                null,
+                React.createElement('img', { src: movie.image_url })
+            ),
+            React.createElement('br', null),
             ' ',
             React.createElement(
                 'span',

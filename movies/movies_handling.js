@@ -25,10 +25,9 @@ function get_movie(req, res)
 
 function create_movie(req, res) 
 {
-    const movie_name =  req.body.movie_name
-    const user_name =  req.body.user_name
+    const movie_name =  req.body.name
     const email = req.body.email
-    const image = req.body.image
+    const image = req.body.image_url
     
     if (movie_name == null || email == null || image == null)
     {
@@ -39,7 +38,7 @@ function create_movie(req, res)
 
     const secrets = create_secret()
 
-    creator_id = global_scope.users_list.get_creator_id(email, user_name)
+    creator_id = global_scope.users_list.get_creator_id(email)
     new_movie = global_scope.movies_list.add_movie(movie_name, creator_id, image, secrets)
     
     res.status(StatusCodes.OK)

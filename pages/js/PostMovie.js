@@ -19,7 +19,7 @@ class PostMovie extends React.Component {
         });
         if (response.status == 200) {
             const data = await response.json();
-            alert("secret" + data.secret);
+            alert("secret " + data.secrets);
         } else {
             const err = await response.text();
             alert(err);
@@ -29,7 +29,7 @@ class PostMovie extends React.Component {
     render() {
         return React.createElement(
             'form',
-            { onSubmit: this.add_movie },
+            { onSubmit: e => this.add_movie(e) },
             React.createElement(
                 'div',
                 { 'class': 'form-group' },

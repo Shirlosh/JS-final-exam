@@ -26,7 +26,7 @@ class UsersList {
         return new_user
     }
 
-    get_creator_id(email, name)
+    get_creator_id(email, name=null)
     {
         let user_id
         const index = this.users_array.findIndex(user => user.email == email)

@@ -25,7 +25,7 @@ class Movie extends React.Component
     render() {
         const movie = this.props.movie
 		return (	<div>
-                    {/* <span><img src={movie.image_url}/></span><br/> */}
+                    <span><img src={movie.image_url}/></span><br/>
                     {' '}<span><strong>Movie name: </strong> {movie.name}</span> <br/>
                          <span><strong>Creator id: </strong> {movie.creator_id}</span> <br/>
                     <span style={{fontSize: '1rem'}}></span>
